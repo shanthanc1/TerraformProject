@@ -54,3 +54,10 @@ variable "ssl_Certificate_arn" {
     description = "SSL certificate arn"
     type        = string
 }
+
+# sns-topic variable
+variable "operator_email" {
+    default     = "shanthc1@umbc.edu"
+    description = "a vaid email address"
+    type        = string
+}
