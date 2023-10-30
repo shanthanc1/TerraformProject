@@ -48,3 +48,9 @@ variable "private_data_subnet_az2_cidr" {
     type        = string
 }
 
+# alb variables
+variable "ssl_Certificate_arn" {
+    default     = "arn:aws:acm:us-east-1:733971065592:certificate/e0910d1f-9bff-4eb2-98d9-f6a89efe879f"
+    description = "SSL certificate arn"
+    type        = string
+}
