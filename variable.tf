@@ -61,3 +61,17 @@ variable "operator_email" {
     description = "a vaid email address"
     type        = string
 }
+
+# route 53 variables
+
+variable "domain_name" {
+    default     = "shanchas.com"
+    description = "domain name"
+    type        = string
+}
+
+variable "record_name" {
+    default     = "www"
+    description = "sub domain name"
+    type        = string
+}
