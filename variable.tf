@@ -48,9 +48,36 @@ variable "private_data_subnet_az2_cidr" {
     type        = string
 }
 
+# RDS variables
+
+ variable "database_snapshot_identifier" {
+    default     = "arn:aws:rds:us-east-1:733971065592:snapshot:dv-rds-db-snapshot"
+    description = "the database snapshot arn"
+    type        = string
+}
+
+variable "database_instance_class" {
+    default     = "db.t2.micro"
+    description = "the database instance type"
+    type        = string
+}
+
+variable "database_instance_identifier" {
+    default     = "dv-rds-db"
+    description = "the database instance identifier"
+    type        = string
+}
+
+variable "multi_az_deployment" {
+    default     = false
+    description = "create a standby db instance"
+    type        = bool
+}
+
+
 # alb variables
 variable "ssl_Certificate_arn" {
-    default     = "arn:aws:acm:us-east-1:733971065592:certificate/e0910d1f-9bff-4eb2-98d9-f6a89efe879f"
+    default     = "arn:aws:acm:us-east-1:733971065592:certificate/9144295f-82ce-4088-96e5-03829158fe97"
     description = "SSL certificate arn"
     type        = string
 }
@@ -62,10 +89,38 @@ variable "operator_email" {
     type        = string
 }
 
+
+# ASG variables
+
+variable "launch_template_name" {
+    default     = "dev-launch-template"
+    description = "name of the launch template"
+    type        = string
+}
+
+variable "ec2_image_id" {
+    default     = "ami-0d09fc94a4aaed839"
+    description = "id if the AMI"
+    type        = string
+}
+
+variable "ec2_instance_type" {
+    default     = "t2.micro"
+    description = "ec2 instance type"
+    type        = string
+}
+
+variable "ec2_key_pair_name" {
+    default     = "devKP"
+    description = "ec2 key pair name"
+    type        = string
+}
+
+
 # route 53 variables
 
 variable "domain_name" {
-    default     = "shanchas.com"
+    default     = "shan-chas.com"
     description = "domain name"
     type        = string
 }
